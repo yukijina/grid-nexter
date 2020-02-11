@@ -33,3 +33,21 @@ body {
   font-weight: 300;
   line-height: 1.6;
 }
+
+.container {
+  display: grid;
+  //min-content - default is auto
+  grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+  //we start from 8 columns layout
+  //we want fixed width - 1140px / 8col = 142.5px => aprox. 14rem
+  //minimum - minimum content, max 14rem width
+  //first 8rem is for sidebar - the rests are repeated
+  //1fr - create space after sidebar and the last column. 1fr - occupay the remaining space
+  //if we didn't have the sidebar(8rem), we can simply use marin auto (or justify content);
+  grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+
+  & > * {
+    padding: 40px;
+
+  }
+}
