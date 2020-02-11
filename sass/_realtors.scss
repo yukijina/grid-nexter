@@ -1,0 +1,5 @@
+.realtors {
+  background-color: $color-secondary;
+  //col-start 7 - column starts from 7 (insted of 1) and ends full-end
+  grid-column: col-start 7 / full-end;
+}
