@@ -46,8 +46,4 @@ body {
   //if we didn't have the sidebar(8rem), we can simply use marin auto (or justify content);
   grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
 
-  & > * {
-    padding: 40px;
-
-  }
 }

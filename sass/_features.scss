@@ -1,5 +1,38 @@
 .features {
-  background-color: $color-grey-light-2;
   grid-column: center-start / center-end;
 
+  margin: 15rem 0;
+
+  display: grid;
+  //grid-template-columns: repeat(3, 1fr);
+  //responsive way
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  //We don't need the code below - implicit grid
+  //grid-template-rows: auto auto;
+  grid-gap: 6rem;
+  //make text starts frop top. Otherwise it streatch and text starting points differe depending on text length.
+  align-items: start;
+}
+
+.feature {
+  // nexted grid
+  display: grid;
+  // here min-content is icon(width4.5rem height 4.5rem) We can say auto too. And 1fr for the rest of items (h4 and p)
+  grid-template-columns: min-content 1fr;
+  // we don't need to specify row. - inplicit. size of the content
+  grid-row-gap: 1.5rem;
+  grid-column-gap: 2.5rem;
+
+  &__icon {
+    fill: $color-primary;
+    width: 4.5rem;
+    height: 4.5rem;
+    grid-row: 1 / span 2;
+    // If icon was displayed a bit high, we manually adjust the content
+    // transform: translate(-1rem);
+  }
+
+  &__text {
+    font-size: 1.7rem;
+  }
 }
